@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SJ</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', sans-serif; background: #0a0a0a; color: #d0d0d0; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+  .box { text-align: center; }
+  .logo { font-size: 3.5em; font-weight: bold; color: #c8a000; letter-spacing: 3px; margin-bottom: 30px; }
+  .form { display: flex; flex-direction: column; gap: 10px; width: 240px; margin: 0 auto; }
+  .form input { background: #111; border: 1px solid #1a1a1a; color: #ddd; padding: 10px 14px; font-size: 0.9em; outline: none; }
+  .form input:focus { border-color: #c8a000; }
+  .form button { background: transparent; border: 1px solid #c8a000; color: #c8a000; padding: 10px; font-size: 0.85em; cursor: pointer; transition: all 0.3s; letter-spacing: 1px; }
+  .form button:hover { background: #c8a000; color: #0a0a0a; }
+  .err { color: #ff4444; font-size: 0.8em; height: 18px; margin-top: 5px; }
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="logo">SJ</div>
+  <div class="form">
+    <input type="text" id="u" placeholder="Benutzer" autocomplete="off">
+    <input type="password" id="p" placeholder="Passwort">
+    <button onclick="go()">→</button>
+  </div>
+  <div class="err" id="err"></div>
+</div>
+<script>
+async function H(s){const e=new TextEncoder().encode(s);const h=await crypto.subtle.digest('SHA-256',e);return Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,'0')).join('');}
+async function go(){const u=document.getElementById('u').value;const p=document.getElementById('p').value;const h=await H(p);if(u==='sv'&&h==='9e507a6dfbf98393bbf23d487af7f1c5b2e8ea0635e3f0cddeac3a9a090a3dbe'){window.location.href='dashboard.html';}else{document.getElementById('err').textContent='Zugang verweigert';}}
+document.getElementById('p').addEventListener('keyup',function(e){if(e.key==='Enter')go();});
+document.getElementById('u').addEventListener('keyup',function(e){if(e.key==='Enter')document.getElementById('p').focus();});
+</script>
+</body>
+</html>

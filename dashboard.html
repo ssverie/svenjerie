@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SJ · Dashboard</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', sans-serif; background: #f5f5f5; color: #222; min-height: 100vh; }
+
+  .topbar { background: #fff; border-bottom: 1px solid #e0e0e0; padding: 10px 24px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+  .topbar-logo { font-size: 1.1em; font-weight: bold; color: #b8960a; letter-spacing: 2px; }
+  .topbar-logout { font-size: 0.75em; color: #999; cursor: pointer; }
+  .topbar-logout:hover { color: #b8960a; }
+
+  .content { max-width: 1050px; margin: 0 auto; padding: 24px; }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .left { display: flex; flex-direction: column; gap: 20px; }
+
+  .section { background: #fff; border: 1px solid #e0e0e0; border-radius: 4px; padding: 18px; }
+  .section h2 { font-size: 0.7em; color: #b8960a; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid #eee; }
+
+  .item { display: block; padding: 5px 8px; font-size: 0.84em; color: #222; border-bottom: 1px solid #f0f0f0; cursor: pointer; transition: background 0.2s; text-decoration: none; }
+  .item:hover { background: #fafaf0; }
+  .item.disabled { cursor: default; }
+  .item.disabled:hover { background: transparent; }
+
+  .cat { padding: 8px 8px 4px; font-size: 0.7em; color: #222; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-top: 1px solid #e0e0e0; margin-top: 8px; }
+  .comp { display: block; padding: 4px 8px; font-size: 0.82em; color: #222; cursor: pointer; transition: background 0.2s; text-decoration: none; border-bottom: 1px solid #f8f8f8; }
+  .comp:hover { background: #fafaf0; }
+  .comp.disabled { cursor: default; }
+  .comp.disabled:hover { background: transparent; }
+
+  @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-logo">SJ</span>
+  <span class="topbar-logout" onclick="location.href='index.html'">Logout</span>
+</div>
+
+<div class="content">
+  <div class="grid">
+
+    <div class="left">
+
+      <div class="section">
+        <h2>25 Projekte</h2>
+        <a class="item" href="projects/minibank.html">Mini-Bank</a>
+        <div class="item disabled">Mini-Börse</div>
+        <div class="item disabled">Mini-Versicherung</div>
+        <div class="item disabled">Mini-Bibliothek</div>
+        <div class="item disabled">Mini-Krankenhaus</div>
+        <div class="item disabled">Mini-Hotel</div>
+        <div class="item disabled">Mini-Steuer</div>
+        <div class="item disabled">Mini-Pizzaservice</div>
+        <div class="item disabled">Mini-Airline</div>
+        <div class="item disabled">Mini-Flugbuchung</div>
+        <div class="item disabled">Mini-Auktionshaus</div>
+        <div class="item disabled">Mini-Energieversorger</div>
+        <div class="item disabled">Mini-Notenbank</div>
+        <div class="item disabled">Mini-Kreditantrag</div>
+        <div class="item disabled">Mini-Reisebüro</div>
+        <div class="item disabled">Mini-Mahnwesen</div>
+        <div class="item disabled">Mini-Lohnbuchhaltung</div>
+        <div class="item disabled">Mini-Vertragsmgmt</div>
+        <div class="item disabled">Mini-Dashboard</div>
+        <div class="item disabled">Mini-Filialbank</div>
+        <div class="item disabled">Mini-Patientenverwaltung</div>
+        <div class="item disabled">Mini-Paketdienst</div>
+        <div class="item disabled">Mini-SaaS</div>
+        <div class="item disabled">Mini-Notaufnahme</div>
+        <div class="item disabled">Mini-Ticketshop</div>
+      </div>
+
+      <div class="section">
+        <h2>25 Patterns</h2>
+        <div class="item disabled">Konsistenz – Geld darf nicht verschwinden</div>
+        <div class="item disabled">Matching – Zwei Seiten zusammenbringen</div>
+        <div class="item disabled">Scoring / Rating – Bewerten und vergleichen</div>
+        <div class="item disabled">Zustandsautomat – Status-Übergänge definieren</div>
+        <div class="item disabled">Scheduling – Ressourcen auf Zeit verteilen</div>
+        <div class="item disabled">Zeitfenster-Logik – Verfügbarkeit als Kalender</div>
+        <div class="item disabled">Regelengine – Wenn-Dann-Logik die explodiert</div>
+        <div class="item disabled">Routing / Optimierung – Kürzester Weg, beste Reihenfolge</div>
+        <div class="item disabled">Dynamische Preisberechnung – Auslastung bestimmt den Preis</div>
+        <div class="item disabled">Overbooking – Mehr verkaufen als existiert</div>
+        <div class="item disabled">Countdown / Echtzeit – Zeitdruck verändert Verhalten</div>
+        <div class="item disabled">Prognose vs. Realität – Schätzen, messen, abrechnen</div>
+        <div class="item disabled">Makro-Simulation – Kleine Stellschraube, große Wirkung</div>
+        <div class="item disabled">Workflow / Genehmigung – Mehrstufige Freigabe</div>
+        <div class="item disabled">Stornierung / Kompensation – Rückgängig machen was schon passiert ist</div>
+        <div class="item disabled">Eskalation – Zeit vergeht, Druck steigt</div>
+        <div class="item disabled">Batch-Verarbeitung – Massenlauf zum Stichtag</div>
+        <div class="item disabled">Historisierung / Versionierung – Der alte Stand muss bleiben</div>
+        <div class="item disabled">Aggregation / Reporting – Rohdaten verdichten</div>
+        <div class="item disabled">Berechtigungen / Rollen – Wer darf was</div>
+        <div class="item disabled">Duplikaterkennung – Meyer, Meier, Mayer</div>
+        <div class="item disabled">Event-Driven / Benachrichtigung – Etwas passiert, jemand muss es wissen</div>
+        <div class="item disabled">Mandantenfähigkeit – Ein System, viele Kunden</div>
+        <div class="item disabled">Warteliste / Priorität – Wer ist zuerst dran?</div>
+        <div class="item disabled">Reservierung mit Timeout – Weder frei noch belegt</div>
+      </div>
+
+    </div>
+
+    <div class="section">
+      <h2>68 Komponenten</h2>
+
+      <div class="cat">📥 Daten-Import</div>
+      <div class="comp disabled">CSV-Import</div>
+      <div class="comp disabled">Excel-Import</div>
+      <div class="comp disabled">XML/JSON-Parsing</div>
+      <div class="comp disabled">REST-API-Anbindung</div>
+      <div class="comp disabled">File-Upload</div>
+      <div class="comp disabled">Batch-Datei-Import</div>
+      <div class="comp disabled">Scraping</div>
+
+      <div class="cat">📤 Daten-Export</div>
+      <div class="comp disabled">PDF-Erzeugung</div>
+      <div class="comp disabled">Excel-Export</div>
+      <div class="comp disabled">CSV-Export</div>
+      <div class="comp disabled">Brief/Dokument</div>
+      <div class="comp disabled">Diagramme/Charts</div>
+      <div class="comp disabled">Druckausgabe</div>
+      <div class="comp disabled">QR-Code/Barcode</div>
+
+      <div class="cat">🔢 Berechnung</div>
+      <div class="comp disabled">Währungsumrechnung</div>
+      <div class="comp disabled">Zinsberechnung</div>
+      <div class="comp disabled">Steuerberechnung</div>
+      <div class="comp disabled">Rundungsregeln</div>
+      <div class="comp disabled">Gebührenberechnung</div>
+      <div class="comp disabled">Rabatt/Promotion</div>
+      <div class="comp disabled">Proration</div>
+      <div class="comp disabled">Einheitenumrechnung</div>
+      <div class="comp disabled">Statistik/Aggregation</div>
+
+      <div class="cat">📅 Datum/Zeit</div>
+      <div class="comp disabled">Geschäftstage</div>
+      <div class="comp disabled">Feiertags-Kalender</div>
+      <div class="comp disabled">Zeitzonen</div>
+      <div class="comp disabled">Fristen/Deadlines</div>
+      <div class="comp disabled">Perioden</div>
+      <div class="comp disabled">Alter/Laufzeit</div>
+      <div class="comp disabled">Cron/Timer</div>
+
+      <div class="cat">✅ Validierung</div>
+      <div class="comp disabled">Eingabe-Validierung</div>
+      <div class="comp disabled">IBAN/BIC-Prüfung</div>
+      <div class="comp disabled">E-Mail/Telefon</div>
+      <div class="comp disabled">Adress-Validierung</div>
+      <div class="comp disabled">Steuernummer/USt-ID</div>
+      <div class="comp disabled">Dublettenprüfung</div>
+      <div class="comp disabled">Plausibilitätsprüfung</div>
+
+      <div class="cat">📨 Kommunikation</div>
+      <div class="comp disabled">E-Mail-Versand</div>
+      <div class="comp disabled">SMS/Push</div>
+      <div class="comp disabled">Nachrichtenbox</div>
+      <div class="comp disabled">Webhook/Callback</div>
+      <div class="comp disabled">Serienbrief</div>
+      <div class="comp disabled">Audit-Benachrichtigung</div>
+
+      <div class="cat">🔒 Sicherheit</div>
+      <div class="comp disabled">Login/Session</div>
+      <div class="comp disabled">2FA/MFA</div>
+      <div class="comp disabled">Passwort-Reset</div>
+      <div class="comp disabled">Verschlüsselung</div>
+      <div class="comp disabled">Audit Trail</div>
+      <div class="comp disabled">DSGVO/Datenschutz</div>
+
+      <div class="cat">🖥️ Frontend</div>
+      <div class="comp disabled">Tabelle/Grid</div>
+      <div class="comp disabled">Master-Detail</div>
+      <div class="comp disabled">Suche/Autocomplete</div>
+      <div class="comp disabled">Wizard/Formular</div>
+      <div class="comp disabled">Dashboard/KPI</div>
+      <div class="comp disabled">Kalenderansicht</div>
+      <div class="comp disabled">Drag & Drop</div>
+      <div class="comp disabled">Responsive/Mobile</div>
+
+      <div class="cat">🗃️ Datenbank</div>
+      <div class="comp disabled">CRUD + Soft Delete</div>
+      <div class="comp disabled">Temporal Tables</div>
+      <div class="comp disabled">CTE/Hierarchie</div>
+      <div class="comp disabled">Volltextsuche SQL</div>
+      <div class="comp disabled">Optimistic Locking</div>
+      <div class="comp disabled">Partitionierung</div>
+      <div class="comp disabled">Materialized Views</div>
+      <div class="comp disabled">Multi-Tenant</div>
+
+      <div class="cat">💳 Payment</div>
+      <div class="comp disabled">Zahlungseingang</div>
+      <div class="comp disabled">Zahlungsausgang</div>
+      <div class="comp disabled">Payment Gateway</div>
+      <div class="comp disabled">Zahlungsstatus</div>
+      <div class="comp disabled">Ratenzahlung</div>
+      <div class="comp disabled">Reconciliation</div>
+      <div class="comp disabled">Gutschrift/Rückzahlung</div>
+      <div class="comp disabled">Mahnlauf</div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
